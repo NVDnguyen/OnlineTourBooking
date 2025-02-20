@@ -1,0 +1,93 @@
+package com.example.bookingapp.data.model;
+
+import java.util.List;
+
+public class Place {
+    private int id;
+    private String name;
+    private String overview;
+    private String location;
+    private float price;
+    private List<String> image;
+    private double distance;
+
+    public Place() {
+    }
+
+    public Place(int id, List<String> image, String location, String name, String overview, float price) {
+        this.id = id;
+        this.image = image;
+        this.location = location;
+        this.name = name;
+        this.overview = overview;
+        this.price = price;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<String> getImage() {
+        return image;
+    }
+
+    public void setImage(List<String> image) {
+        this.image = image;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Place{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", overview='" + overview + '\'' +
+                ", location='" + location + '\'' +
+                ", price=" + price +
+                ", image=" + image +
+                '}';
+    }
+}

@@ -1,0 +1,59 @@
+package com.example.bookingapp.data.model;
+
+public class PlaceBill {
+    private int id;
+    private float price;
+    private int ticketNumber;
+    private int idPlace;
+
+    public PlaceBill(int id, float price, int ticketNumber,int idPlace) {
+        this.id = id;
+        this.price = price;
+        this.ticketNumber = ticketNumber;
+        this.idPlace = idPlace;
+    }
+
+    public PlaceBill() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public int getTicketNumber() {
+        return ticketNumber;
+    }
+
+    public void setTicketNumber(int ticketNumber) {
+        this.ticketNumber = ticketNumber;
+    }
+
+    public Integer getIdPlace() {
+        return idPlace;
+    }
+
+    public void setIdPlace(int idPlace) {
+        this.idPlace = idPlace;
+    }
+
+    @Override
+    public String toString() {
+        return "PlaceBill{" +
+                "id='" + id + '\'' +
+                ", price=" + price +
+                ", ticketNumber=" + ticketNumber +
+                '}';
+    }
+}
