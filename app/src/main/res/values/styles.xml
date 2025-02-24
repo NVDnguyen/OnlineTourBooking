@@ -2,7 +2,13 @@
 <resources>
     <style name="RoundedImageView">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
+        <item name="cornerSize">30%</item>
     </style>
+    <style name="SmallRatingBar" parent="Base.Widget.AppCompat.RatingBar.Indicator">
+        <item name="android:progressTint">@android:color/holo_orange_light</item>
+        <item name="android:secondaryProgressTint">@android:color/holo_orange_dark</item>
+        <item name="android:progressBackgroundTint">@android:color/darker_gray</item>
+    </style>
+
 
 </resources>
