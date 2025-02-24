@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -39,19 +40,23 @@
             <!-- Destination Name -->
             <TextView
                 android:id="@+id/place_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Barcelona"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:textStyle="bold"/>
 
             <!-- Country Name -->
             <TextView
                 android:id="@+id/place_country"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Spain"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="10sp"/>
             <!-- Rating Section -->

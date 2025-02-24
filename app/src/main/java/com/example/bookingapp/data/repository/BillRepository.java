@@ -32,7 +32,6 @@ public class BillRepository {
         if (bill == null) return false;
 
         ContentValues values = new ContentValues();
-        values.put("id", bill.getId());
         values.put("idFlightBill", bill.getFlightBillId());
         values.put("idHotelBill", bill.getHotelBillId());
         values.put("idPlaceBill", bill.getPlaceBillId());

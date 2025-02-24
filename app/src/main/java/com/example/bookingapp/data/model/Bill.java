@@ -12,6 +12,14 @@ public class Bill {
     private Date date;
 
     public Bill(){}
+    public Bill(Date date, String flightBillId, String hotelBillId, String placeBillId, float totalPrice, int userId) {
+        this.date = date;
+        this.flightBillId = flightBillId;
+        this.hotelBillId = hotelBillId;
+        this.placeBillId = placeBillId;
+        this.totalPrice = totalPrice;
+        this.userId = userId;
+    }
 
     public Bill(Date date, String flightBillId, String hotelBillId, int id, String placeBillId, float totalPrice, int userId) {
         this.date = date;

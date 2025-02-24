@@ -27,8 +27,9 @@ public class PlaceBillRepository {
         if (placeBill == null) return -1;
 
         ContentValues values = new ContentValues();
-        values.put("idPlace", placeBill.getIdPlace());
+        values.put("idUser",placeBill.getIdUser());
         values.put("price", placeBill.getPrice());
+        values.put("idPlace", placeBill.getIdPlace());
         values.put("ticketNumber", placeBill.getTicketNumber());
 
         return db.insert("PlaceBill", null, values); // Returns generated row ID
@@ -44,7 +45,8 @@ public class PlaceBillRepository {
                 cursor.getInt(cursor.getColumnIndexOrThrow("id")), // Auto-incremented int ID
                 cursor.getFloat(cursor.getColumnIndexOrThrow("price")),
                 cursor.getInt(cursor.getColumnIndexOrThrow("ticketNumber")),
-                cursor.getInt(cursor.getColumnIndexOrThrow("idPlace"))
+                cursor.getInt(cursor.getColumnIndexOrThrow("idPlace")),
+                cursor.getInt(cursor.getColumnIndexOrThrow("idUser"))
         );
     }
 

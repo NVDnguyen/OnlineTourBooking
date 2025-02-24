@@ -10,17 +10,46 @@ public class Place {
     private float price;
     private List<String> image;
     private double distance;
+    private float rating;
+    private int popular;
 
     public Place() {
     }
+    public Place(String name, String overview, String location, float price, List<String> image, float rating,int popular) {
+        this.name = name;
+        this.overview = overview;
+        this.location = location;
+        this.price = price;
+        this.image = image;
+        this.rating = rating;
+        this.popular = popular;
+    }
 
-    public Place(int id, List<String> image, String location, String name, String overview, float price) {
+    public Place(int id, List<String> image, String location, String name, String overview, float price,float rating,int popular) {
         this.id = id;
         this.image = image;
         this.location = location;
         this.name = name;
         this.overview = overview;
         this.price = price;
+        this.rating = rating;
+        this.popular = popular;
+    }
+
+    public int getPopular() {
+        return popular;
+    }
+
+    public void setPopular(int popular) {
+        this.popular = popular;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 
     public double getDistance() {

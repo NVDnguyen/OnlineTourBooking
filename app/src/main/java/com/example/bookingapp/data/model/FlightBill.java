@@ -9,18 +9,36 @@ public class FlightBill {
     private Date departureTime;
     private int idFlight;
     private int ticketNumber;
+    private int idUser;
 
 
     public FlightBill() {
     }
 
-    public FlightBill(Date arrivalTime, Date departureTime, int id, int idFlight, float price, int ticketNumber) {
+    public FlightBill(Date arrivalTime, Date departureTime, int idFlight, float price, int ticketNumber,int idUser) {
+        this.arrivalTime = arrivalTime;
+        this.departureTime = departureTime;
+        this.idFlight = idFlight;
+        this.price = price;
+        this.ticketNumber = ticketNumber;
+        this.idUser = idUser;
+    }
+    public FlightBill(Date arrivalTime, Date departureTime, int id, int idFlight, float price, int ticketNumber,int idUser) {
         this.arrivalTime = arrivalTime;
         this.departureTime = departureTime;
         this.id = id;
         this.idFlight = idFlight;
         this.price = price;
         this.ticketNumber = ticketNumber;
+        this.idUser = idUser;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public Date getArrivalTime() {

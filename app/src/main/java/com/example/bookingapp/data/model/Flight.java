@@ -13,6 +13,15 @@ public class Flight {
 
     public Flight() {
     }
+    public Flight(Date arrivalTime, String departureLocation, Date departureTime, String destinationLocation,String name, float price) {
+        this.arrivalTime = arrivalTime;
+        this.departureLocation = departureLocation;
+        this.departureTime = departureTime;
+        this.destinationLocation = destinationLocation;
+        this.name = name;
+        this.price = price;
+    }
+
 
     public Flight(Date arrivalTime, String departureLocation, Date departureTime, String destinationLocation, int id, String name, float price) {
         this.arrivalTime = arrivalTime;

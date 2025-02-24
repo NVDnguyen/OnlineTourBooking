@@ -1,5 +1,7 @@
 package com.example.bookingapp.view.activities;
 
+import static com.example.bookingapp.utils.Tool.insertSampleData;
+
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -29,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Set up BottomNavigationView with NavController
         setupBottomNavigationView();
+
+        // init database
+       // insertSampleData(this);
 
 
     }

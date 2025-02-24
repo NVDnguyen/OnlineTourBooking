@@ -13,7 +13,13 @@ public class Hotel {
 
     public Hotel() {
     }
-
+    public Hotel( List<String> images, String location, String name, float price, float rate) {
+        this.images = images;
+        this.location = location;
+        this.name = name;
+        this.price = price;
+        this.rate = rate;
+    }
     public Hotel(int id, List<String> images, String location, String name, float price, float rate) {
         this.id = id;
         this.images = images;

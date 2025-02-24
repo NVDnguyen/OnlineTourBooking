@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "BookingApp.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 1;
     private static DatabaseHelper instance;
 
     public static synchronized DatabaseHelper getInstance(Context context) {
@@ -43,17 +43,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String createFlightBillTable = "CREATE TABLE FlightBill (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "idFlight INTEGER NOT NULL, " +
+                "idUser INTEGER NOT NULL, " +
                 "price REAL NOT NULL, " +
                 "arrivalTime DATETIME NOT NULL, " + // Changed TEXT to DATETIME
                 "departureTime DATETIME NOT NULL, " + // Changed TEXT to DATETIME
                 "ticketNumber INTEGER NOT NULL, " +
-                "FOREIGN KEY (idFlight) REFERENCES Flight(id))"; // Added foreign key
+                "FOREIGN KEY (idFlight) REFERENCES Flight(id))";
+
 
         String createHotelTable = "CREATE TABLE Hotel (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "name TEXT NOT NULL, " +
                 "location TEXT NOT NULL, " +
-                "images TEXT, " + // Added image URLs field
+                "images TEXT, " +
+                "price REAL,"+
                 "rate REAL NOT NULL)";
 
         String createHotelBillTable = "CREATE TABLE HotelBill (" +
@@ -73,6 +76,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "overview TEXT, " +
                 "location TEXT NOT NULL, " +
                 "price REAL NOT NULL, " +
+                "rating REAL,"+
+                "popular INTEGER,"+
                 "images TEXT)"; // Added image URLs field
 
         String createPlaceBillTable = "CREATE TABLE PlaceBill (" +

@@ -21,6 +21,7 @@ public class Validator {
                 isValidEmail(user.getEmail()) &&
                 !isEmpty(user.getName()) &&
                 !isEmpty(user.getPassword()) &&
+                user.getPassword().length() >= 6 &&
                 (user.getLocation() == null || isValidLocation(user.getLocation()));
     }
 

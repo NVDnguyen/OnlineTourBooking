@@ -34,6 +34,7 @@ public class FlightBillRepository {
 
         ContentValues values = new ContentValues();
         values.put("idFlight", flightBill.getIdFlight());
+        values.put("idUser", flightBill.getIdUser());
         values.put("price", flightBill.getPrice());
         values.put("arrivalTime", new SimpleDateFormat(DATE_TIME_FORMAT, Locale.getDefault()).format(flightBill.getArrivalTime()));
         values.put("departureTime", new SimpleDateFormat(DATE_TIME_FORMAT, Locale.getDefault()).format(flightBill.getDepartureTime()));
@@ -57,7 +58,8 @@ public class FlightBillRepository {
                     cursor.getInt(cursor.getColumnIndexOrThrow("id")), // Auto-incremented int ID
                     cursor.getInt(cursor.getColumnIndexOrThrow("idFlight")),
                     cursor.getFloat(cursor.getColumnIndexOrThrow("price")),
-                    cursor.getInt(cursor.getColumnIndexOrThrow("ticketNumber"))
+                    cursor.getInt(cursor.getColumnIndexOrThrow("ticketNumber")),
+                    cursor.getInt(cursor.getColumnIndexOrThrow("idUser"))
             );
         } catch (ParseException e) {
             e.printStackTrace();

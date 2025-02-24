@@ -10,14 +10,30 @@ public class HotelBill {
     private int time;
     private int idHotel;
 
+    private int idUser;
     public HotelBill(){}
-    public HotelBill(int id, Date date, float price, String roomType, int time, int idHotel) {
+    public HotelBill( Date date, float price, String roomType, int time, int idHotel, int idUser) {
+        this.date = date;
+        this.price = price;
+        this.roomType = roomType;
+        this.time = time;
+        this.idHotel = idHotel;
+        this.idUser = idUser;
+    }
+    public HotelBill(int id, Date date, float price, String roomType, int time, int idHotel,int idUser) {
         this.id = id;
         this.date = date;
         this.price = price;
         this.roomType = roomType;
         this.time = time;
         this.idHotel = idHotel;
+        this.idUser = idUser;
+    }
+    public int getIdUser() {
+        return idUser;
+    }
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public Date getDate() {

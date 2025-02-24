@@ -34,6 +34,8 @@ public class PlaceRepository {
         values.put("overview", place.getOverview());
         values.put("location", place.getLocation());
         values.put("price", place.getPrice());
+        values.put("rating", place.getRating());
+        values.put("popular", place.getPopular());
         values.put("images", place.getImage() != null ? String.join(",", place.getImage()) : null); // Convert List to CSV
 
         return db.insert("Place", null, values); // Returns generated row ID
@@ -49,12 +51,14 @@ public class PlaceRepository {
         List<String> images = imagesString != null ? List.of(imagesString.split(",")) : new ArrayList<>();
 
         return new Place(
-                cursor.getInt(cursor.getColumnIndexOrThrow("id")), // Auto-incremented int ID
+                cursor.getInt(cursor.getColumnIndexOrThrow("id")),
                 images,
                 cursor.getString(cursor.getColumnIndexOrThrow("location")),
                 cursor.getString(cursor.getColumnIndexOrThrow("name")),
                 cursor.getString(cursor.getColumnIndexOrThrow("overview")),
-                cursor.getFloat(cursor.getColumnIndexOrThrow("price"))
+                cursor.getFloat(cursor.getColumnIndexOrThrow("price")),
+                cursor.getFloat(cursor.getColumnIndexOrThrow("rating")),
+                cursor.getInt(cursor.getColumnIndexOrThrow("popular"))
         );
     }
 
@@ -110,6 +114,38 @@ public class PlaceRepository {
         // Sort by distance (ascending)
         places.sort(Comparator.comparingDouble(Place::getDistance));
 
+        return places;
+    }
+
+    /**
+     * Get the most popular places, sorted by **popularity** in descending order.
+     */
+    public List<Place> getMostPopularPlaces(int limit) {
+        List<Place> places = new ArrayList<>();
+        try (Cursor cursor = db.rawQuery("SELECT * FROM Place ORDER BY popular DESC LIMIT ?", new String[]{String.valueOf(limit)})) {
+            while (cursor.moveToNext()) {
+                Place place = convertCursorToPlace(cursor);
+                if (place != null) {
+                    places.add(place);
+                }
+            }
+        }
+        return places;
+    }
+
+    /**
+     * Get all places sorted by **rating** in descending order.
+     */
+    public List<Place> getPlacesByRatingDesc() {
+        List<Place> places = new ArrayList<>();
+        try (Cursor cursor = db.rawQuery("SELECT * FROM Place ORDER BY rating DESC", null)) {
+            while (cursor.moveToNext()) {
+                Place place = convertCursorToPlace(cursor);
+                if (place != null) {
+                    places.add(place);
+                }
+            }
+        }
         return places;
     }
 

@@ -33,6 +33,7 @@ public class HotelBillRepository {
         if (hotelBill == null) return -1;
 
         ContentValues values = new ContentValues();
+        values.put("idUser", hotelBill.getIdUser());
         values.put("idHotel", hotelBill.getIdHotel());
         values.put("date", new SimpleDateFormat(DATE_TIME_FORMAT, Locale.getDefault()).format(hotelBill.getDate()));
         values.put("price", hotelBill.getPrice());
@@ -57,7 +58,8 @@ public class HotelBillRepository {
                     cursor.getFloat(cursor.getColumnIndexOrThrow("price")),
                     cursor.getString(cursor.getColumnIndexOrThrow("roomType")),
                     cursor.getInt(cursor.getColumnIndexOrThrow("time")),
-                    cursor.getInt(cursor.getColumnIndexOrThrow("idHotel"))
+                    cursor.getInt(cursor.getColumnIndexOrThrow("idHotel")),
+                    cursor.getInt(cursor.getColumnIndexOrThrow("idUser"))
             );
         } catch (ParseException e) {
             e.printStackTrace();

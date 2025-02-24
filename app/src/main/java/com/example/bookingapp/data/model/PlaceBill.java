@@ -5,12 +5,28 @@ public class PlaceBill {
     private float price;
     private int ticketNumber;
     private int idPlace;
+    private int idUser;
 
-    public PlaceBill(int id, float price, int ticketNumber,int idPlace) {
+    public PlaceBill(float price, int ticketNumber,int idPlace,int idUser) {
+        this.price = price;
+        this.ticketNumber = ticketNumber;
+        this.idPlace = idPlace;
+        this.idUser = idUser;
+    }
+    public PlaceBill(int id, float price, int ticketNumber,int idPlace,int idUser) {
         this.id = id;
         this.price = price;
         this.ticketNumber = ticketNumber;
         this.idPlace = idPlace;
+        this.idUser = idUser;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public PlaceBill() {
