@@ -21,16 +21,22 @@
             android:src="@drawable/default_location"/>
 
         <!-- Bookmark Icon -->
-        <ImageView
-            android:id="@+id/bookmark_icon"
+        <ImageButton
+            android:id="@+id/bookmark_button"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_margin="8dp"
             android:background="@drawable/circle_background"
             android:padding="4dp"
-            android:src="@drawable/bookmark_selector"
             android:scaleType="centerInside"
-            android:layout_alignParentEnd="true"/>
+            android:src="@drawable/bookmark_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:checkable="true"
+            android:layout_alignParentEnd="true"
+            />
+
+
 
 
         <View

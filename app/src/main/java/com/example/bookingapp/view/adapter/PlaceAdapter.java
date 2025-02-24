@@ -101,6 +101,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             binding.placeCountry.setText(convertToAddress(context,place.getLocation()));
             binding.placeRating.setText(String.format("%.1f",place.getRating()));
 
+
             Picasso.get()
                     .load(Uri.parse(place.getImage().get(0)))
                     .placeholder(R.drawable.default_img)
@@ -125,6 +126,9 @@ public class PlaceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             binding.placeName.setText(place.getName());
             binding.placeRating.setText(String.format("%.1f",place.getRating()));
             binding.ratingBar.setRating(place.getRating());
+
+            binding.bookmarkButton.setOnClickListener(v->{
+            });
 
             Picasso.get()
                     .load(Uri.parse(place.getImage().get(0)))
