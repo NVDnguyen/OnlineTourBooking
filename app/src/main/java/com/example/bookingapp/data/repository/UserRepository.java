@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.bookingapp.data.database.DatabaseHelper;
 import com.example.bookingapp.data.model.User;
+import com.example.bookingapp.utils.Validator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,7 @@ public class UserRepository {
      * Returns the generated ID on success, -1 on failure.
      */
     public long createUser(User user) {
+
         if (user == null) return -1;
 
         ContentValues values = new ContentValues();

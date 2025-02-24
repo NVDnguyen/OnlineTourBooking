@@ -10,7 +10,16 @@ public class User {
     public User(){
 
     }
-    public User(String email,String password, int id, String location, String name, boolean isAdmin) {
+
+    public User(String email, String location, String name, String password) {
+        this.isAdmin = false;
+        this.email = email;
+        this.location = location;
+        this.name = name;
+        this.password = password;
+    }
+
+    public User(String email, String password, int id, String location, String name, boolean isAdmin) {
         this.email = email;
         this.id = id;
         this.location = location;
@@ -65,5 +74,17 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", password='" + password + '\'' +
+                ", isAdmin=" + isAdmin +
+                '}';
     }
 }
