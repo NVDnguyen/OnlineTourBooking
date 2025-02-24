@@ -1,5 +1,13 @@
 package com.example.bookingapp.data.model;
 
+import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 public class User {
     private int id;
     private String name;
@@ -7,6 +15,7 @@ public class User {
     private String location;
     private String password;
     private boolean isAdmin;
+    private String address; // not in database
     public User(){
 
     }
@@ -26,6 +35,47 @@ public class User {
         this.name = name;
         this.isAdmin = isAdmin;
         this.password = password;
+    }
+
+    public String getAddress(Context context) {
+        if (location == null || !location.contains(",")) {
+            return "Invalid Location";
+        }
+        try {
+            // Split location string into latitude and longitude
+            String[] parts = location.split(",");
+            double latitude = Double.parseDouble(parts[0].trim());
+            double longitude = Double.parseDouble(parts[1].trim());
+
+            // Use Geocoder to fetch address
+            Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+            List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
+
+            if (addresses != null && !addresses.isEmpty()) {
+                Address address = addresses.get(0);
+
+                // Get city & country
+                String city = address.getLocality();   // City name (e.g., New York)
+                String country = address.getCountryCode();  // Country name (e.g., USA)
+
+                // Return formatted location
+                if (city != null && country != null) {
+                    return city + ", " + country; // Example: "New York, USA"
+                } else if (country != null) {
+                    return country; // If city is missing, return only country
+                }
+            }
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        return "Unknown Location";
+    }
+
+
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getEmail() {
@@ -87,4 +137,5 @@ public class User {
                 ", isAdmin=" + isAdmin +
                 '}';
     }
+
 }

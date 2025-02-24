@@ -1,4 +1,4 @@
-package com.example.bookingapp.view.auth;
+package com.example.bookingapp.view.activities;
 
 import android.Manifest;
 import android.content.Intent;
@@ -17,7 +17,7 @@ import androidx.core.app.ActivityCompat;
 import com.example.bookingapp.R;
 import com.example.bookingapp.contract.RegisterContract;
 import com.example.bookingapp.data.repository.UserRepository;
-import com.example.bookingapp.databinding.RegisterActivityBinding;
+import com.example.bookingapp.databinding.ActivityRegisterBinding;
 import com.example.bookingapp.presenter.RegisterPresenter;
 import com.example.bookingapp.utils.LocationManager;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -29,7 +29,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class RegisterActivity extends AppCompatActivity implements RegisterContract.View, OnMapReadyCallback {
-    private RegisterActivityBinding binding;
+    private ActivityRegisterBinding binding;
     private RegisterPresenter registerPresenter;
     private LocationManager locationManager;
     private GoogleMap mMap;
@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterContr
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = RegisterActivityBinding.inflate(getLayoutInflater());
+        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Initialize dependencies

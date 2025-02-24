@@ -1,4 +1,4 @@
-package com.example.bookingapp.view.auth;
+package com.example.bookingapp.view.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,30 +6,30 @@ import android.util.Log;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.bookingapp.contract.LoginContract;
 import com.example.bookingapp.data.model.User;
 import com.example.bookingapp.data.repository.UserRepository;
-import com.example.bookingapp.databinding.LoginActivityBinding;
+import com.example.bookingapp.databinding.ActivityLoginBinding;
 import com.example.bookingapp.presenter.LoginPresenter;
-import com.example.bookingapp.view.HomeActivity;
 
 import java.util.List;
 import java.util.concurrent.Executors;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View {
-    private LoginActivityBinding binding;
+    private ActivityLoginBinding binding;
     private LoginPresenter loginPresenter;
     private UserRepository userRepository;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = LoginActivityBinding.inflate(getLayoutInflater());
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Initialize
         userRepository = new UserRepository(this);
-        loginPresenter = new LoginPresenter(this, userRepository);
+        loginPresenter = new LoginPresenter(this, userRepository,this);
 
 
         // Navigate to Register screen
@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     @Override
     public void onLoginSuccess(User user) {
         Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("USER_EMAIL", user.getEmail());  // Pass user data if needed
         startActivity(intent);
         finish();

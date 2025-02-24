@@ -1,13 +1,18 @@
 package com.example.bookingapp.data.database;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 
 public class ShareReferenceHelper {
     private static final String PREF_NAME = "MyPrefs";
-    private SharedPreferences sharedPreferences;
-    private Gson gson;
+    private final SharedPreferences sharedPreferences;
+    private final Gson gson;
+    public ShareReferenceHelper(Context context) {
+        sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        gson = new Gson();
+    }
     public void save(String tag, Object object) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         String json = gson.toJson(object);
