@@ -89,7 +89,7 @@ public class Tool {
         // Insert Places
         placeRepository.createPlace(new Place(
                 "Museum of Modern Art", "Works from Van Gogh to Warhol, a garden with many statues, 2 cafes and a Modern restaurant.", "40.77246750424053, -73.97402309481457", 25.0f,
-                Collections.singletonList("https://c4.wallpaperflare.com/wallpaper/573/768/911/paris-france-trees-landscape-wallpaper-preview.jpg"),4.5f,4));
+                Collections.singletonList("https://i.postimg.cc/52xdFFbJ/c6.jpg"),4.5f,4));
 
 //        // Insert Flight Bills
 //        flightBillRepository.createFlightBill(new FlightBill(arrivalDate, departureDate, 1, 450.0f, 2,1));
