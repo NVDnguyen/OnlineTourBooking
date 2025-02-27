@@ -76,7 +76,7 @@ public class Tool {
         Date billDate = new Date(System.currentTimeMillis()); //now
 
 //        // Insert Users
-        userRepository.createUser(new User("alice@gmail.com", "51.509726437623065, -0.11671313005671248", "Alice", "pass123"));
+        //userRepository.createUser(new User("alice@gmail.com", "51.509726437623065, -0.11671313005671248", "Alice", "pass123"));
 
         // Insert Flights
         flightRepository.createFlight(new Flight(
@@ -88,8 +88,16 @@ public class Tool {
 
         // Insert Places
         placeRepository.createPlace(new Place(
-                "Museum of Modern Art", "Works from Van Gogh to Warhol, a garden with many statues, 2 cafes and a Modern restaurant.", "40.77246750424053, -73.97402309481457", 25.0f,
+                "Eiffel Tower", "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889", "48.85838418882046, 2.2944491111660015", 25.0f,
                 Collections.singletonList("https://i.postimg.cc/52xdFFbJ/c6.jpg"),4.5f,4));
+
+        placeRepository.createPlace(new Place(
+                "Museum of Modern Art", "Works from Van Gogh to Warhol, a garden with many statues, 2 cafes and a Modern restaurant.", "40.77246750424053, -73.97402309481457", 25.0f,
+                Collections.singletonList("https://i.postimg.cc/d34X25qK/Museum-of-Modern-Art-in-Warsaw-01-B.jpg"),4.0f,2));
+
+        placeRepository.createPlace(new Place(
+                "Sapa", "Sa Pa is a district-level town of Lào Cai Province in the Northwest region of Vietnam. The town has an area of 685 km² and a population of 70,663 in 2022. The town capital lies at Sa Pa ward.", "22.36015195227598, 103.8267228946122", 25.0f,
+                Collections.singletonList("https://i.postimg.cc/d0w2Fw24/lao-chai-y-linh-ho-village-900x473.webp"),4.2f,1));
 
 //        // Insert Flight Bills
 //        flightBillRepository.createFlightBill(new FlightBill(arrivalDate, departureDate, 1, 450.0f, 2,1));

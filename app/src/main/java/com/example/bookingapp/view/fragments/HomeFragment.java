@@ -55,9 +55,9 @@ public class HomeFragment extends Fragment {
         binding.popularPackage.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         binding.topPackage.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         // set up adapter
-        PlaceAdapter adapter1 = new PlaceAdapter(getContext(),placeRepository.getAllPlaces(),PlaceAdapter.TYPE_THEME_1);
+        PlaceAdapter adapter1 = new PlaceAdapter(getContext(),placeRepository.getPlacesByRatingDesc(),PlaceAdapter.TYPE_THEME_1);
         PlaceAdapter adapter2 = new PlaceAdapter(getContext(),placeRepository.getAllPlaces(),PlaceAdapter.TYPE_THEME_2);
-        PlaceAdapter adapter3 = new PlaceAdapter(getContext(),placeRepository.getAllPlaces(),PlaceAdapter.TYPE_THEME_3);
+        PlaceAdapter adapter3 = new PlaceAdapter(getContext(),placeRepository.getMostPopularPlaces(10),PlaceAdapter.TYPE_THEME_3);
         binding.allPackage.setAdapter(adapter2);
         binding.popularPackage.setAdapter(adapter3);
         binding.topPackage.setAdapter(adapter1);

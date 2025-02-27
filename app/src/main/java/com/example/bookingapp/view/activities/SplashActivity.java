@@ -28,9 +28,10 @@ public class SplashActivity extends AppCompatActivity {
         String imageUrl = "https://icon-library.com/images/icon-png-logos/icon-png-logos-7.jpg";
         Picasso.get()
                 .load(imageUrl)
+                .resize(200, 200)
                 .into(binding.image);
         // init database
-        insertSampleData(this);
+        //insertSampleData(this);
 
         new Handler().postDelayed(() -> {
             if (shareReferenceHelper.get("user", User.class) != null) {
