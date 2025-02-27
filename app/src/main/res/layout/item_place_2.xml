@@ -50,10 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="4dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="50dp"
-            android:layout_alignParentBottom="true">
+            android:layout_marginStart="10dp"
+            android:layout_above="@+id/location_info">
 
             <RatingBar
                 android:id="@+id/ratingBar"
@@ -79,21 +77,21 @@
         <!-- Location Name -->
         <LinearLayout
             android:id="@+id/location_info"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
             android:orientation="vertical"
             android:padding="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="4dp"
             android:layout_alignParentBottom="true">
 
             <TextView
                 android:id="@+id/place_name"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
+                android:maxLines="2"
                 android:text="Italy Manarola"
                 android:textColor="@android:color/white"
-                android:textSize="17sp"
-              />
+                android:textSize="17sp" />
 
         </LinearLayout>
 

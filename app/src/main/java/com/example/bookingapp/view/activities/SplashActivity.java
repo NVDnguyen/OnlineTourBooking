@@ -1,5 +1,7 @@
 package com.example.bookingapp.view.activities;
 
+import static com.example.bookingapp.utils.Tool.insertSampleData;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -27,7 +29,8 @@ public class SplashActivity extends AppCompatActivity {
         Picasso.get()
                 .load(imageUrl)
                 .into(binding.image);
-
+        // init database
+        insertSampleData(this);
 
         new Handler().postDelayed(() -> {
             if (shareReferenceHelper.get("user", User.class) != null) {

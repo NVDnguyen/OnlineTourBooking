@@ -75,7 +75,7 @@ public class Tool {
         Date arrivalDate = new Date(System.currentTimeMillis() + 6 * 24 * 60 * 60 * 1000); // 6 days ahead
         Date billDate = new Date(System.currentTimeMillis()); //now
 
-        // Insert Users
+//        // Insert Users
         userRepository.createUser(new User("alice@gmail.com", "51.509726437623065, -0.11671313005671248", "Alice", "pass123"));
 
         // Insert Flights
@@ -91,17 +91,17 @@ public class Tool {
                 "Museum of Modern Art", "Works from Van Gogh to Warhol, a garden with many statues, 2 cafes and a Modern restaurant.", "40.77246750424053, -73.97402309481457", 25.0f,
                 Collections.singletonList("https://c4.wallpaperflare.com/wallpaper/573/768/911/paris-france-trees-landscape-wallpaper-preview.jpg"),4.5f,4));
 
-        // Insert Flight Bills
-        flightBillRepository.createFlightBill(new FlightBill(arrivalDate, departureDate, 1, 450.0f, 2,1));
-
-        // Insert Hotel Bills
-        hotelBillRepository.createHotelBill(new HotelBill(departureDate, 200.0f, "Deluxe", 3, 1,1));
-
-        // Insert Place Bills
-        placeBillRepository.createPlaceBill(new PlaceBill(25.0f, 3, 1,1));
-
-        // Insert Bills
-        billRepository.createBill(new Bill(billDate, "1", "1", "1", 450.0f * 2 + 200.0f * 3 + 25.0f * 3, 1));
+//        // Insert Flight Bills
+//        flightBillRepository.createFlightBill(new FlightBill(arrivalDate, departureDate, 1, 450.0f, 2,1));
+//
+//        // Insert Hotel Bills
+//        hotelBillRepository.createHotelBill(new HotelBill(departureDate, 200.0f, "Deluxe", 3, 1,1));
+//
+//        // Insert Place Bills
+//        placeBillRepository.createPlaceBill(new PlaceBill(25.0f, 3, 1,1));
+//
+//        // Insert Bills
+//        billRepository.createBill(new Bill(billDate, "1", "1", "1", 450.0f * 2 + 200.0f * 3 + 25.0f * 3, 1));
     }
     public static String convertToAddress(Context context,String location) {
         if (location == null || !location.contains(",")) {

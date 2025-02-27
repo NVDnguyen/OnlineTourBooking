@@ -32,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
         // Set up BottomNavigationView with NavController
         setupBottomNavigationView();
 
-        // init database
-       // insertSampleData(this);
+
 
 
     }
